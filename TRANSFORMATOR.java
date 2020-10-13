@@ -46,7 +46,17 @@ public class TRANSFORMATOR {
             String h = "";
             while(n>0){
                 int z = n%16;
-                if (z <= 9) {
+                n = n/16;
+                switch (z){
+                    case 10: h = "A"+h; break;
+                    case 11: h = "B"+h; break;
+                    case 12: h = "C"+h; break;
+                    case 13: h = "D"+h; break;
+                    case 14: h = "E"+h; break;
+                    case 15: h = "F"+h; break;
+                    default: h = ""+z+""+h;
+                }
+                /*if (z <= 9) {
                     h = "" + z + "" + h;
                 }
                 else if (z == 10) {
@@ -67,7 +77,7 @@ public class TRANSFORMATOR {
                 else
                     h = "F" + h;
 
-                n = n/16;
+                n = n/16;*/
             }
             System.out.println("Result (hex): " + h);
         }
